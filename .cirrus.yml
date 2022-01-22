@@ -1,5 +1,5 @@
 task:
-  name: "Romy"
+  name: "Romay"
   timeout_in: 240m  
   container:
       image: marvelmathesh/docker:rom
