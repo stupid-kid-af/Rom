@@ -1,10 +1,10 @@
 task:
   name: "Raomy"
-  timeout_in: 240m  
+  timeout_in: 10000m  
   container:
       image: marvelmathesh/docker:rom
       cpu: 8
-      memory: 64G
+      memory: 32G
       
   Sync_script:
       - cd ~
