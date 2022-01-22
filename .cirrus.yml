@@ -2,7 +2,7 @@ task:
   name: "Romy"
   timeout_in: 240m
   container:
-      image: fr3akyphantom/droid-builder:bionic
+      image: marvelmathesh/docker:rom
       cpu: 8
       memory: 32G
 
