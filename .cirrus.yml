@@ -2,7 +2,7 @@ task:
   name: "ROMM"
   timeout_in: 10000m  
   container:
-      image: marvelmathesh/docker:rom
+      image: sushrut1101/docker:latest
       cpu: 8
       memory: 32G
       
