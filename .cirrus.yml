@@ -1,6 +1,6 @@
 task:
   name: "Cpher"
-  timeout_in: 10000m  
+  timeout_in: 100000m  
   container:
       image: marvelmathesh/docker:rom
       cpu: 8
@@ -11,7 +11,7 @@ task:
       - mkdir rom
       - cd rom
       - repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle-aosp -g default,-mips,-darwin,-notdefault
-      - git clone https://github.com/stupid-kid-af/local_manifest.git --depth 1 -b main .repo/local_manifests
+    
       - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 
