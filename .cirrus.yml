@@ -16,6 +16,8 @@ task:
 
   Build_script: 
       - export ALLOW_MISSING_DEPENDENCIES=true
+      - cd ~
+      - cd rom
       - export BUILD_BROKEN_DUP_RULES=true
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
