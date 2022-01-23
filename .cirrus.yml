@@ -10,7 +10,7 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init --depth=1 --no-repo-verify -u  https://github.com/CipherOS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
+      - repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
       - git clone https://github.com/stupid-kid-af/local_manifest.git --depth 1 -b main .repo/local_manifests
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -21,8 +21,8 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 60G
       - source build/envsetup.sh
-      - lunch cipher_juice-userdebug
-      - make bacon -j8
+      - lunch evolution_juice-userdebug
+      - make evolution -j8
 
   Upload_script:
       - echo "============================"
