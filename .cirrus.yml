@@ -1,5 +1,5 @@
 task:
-  name: "RsOMM"
+  name: "RssOMM"
   timeout_in: 10000m  
   container:
       image: marvelmathesh/docker:rom
