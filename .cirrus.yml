@@ -23,7 +23,7 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 60G
       - source build/envsetup.sh
-      - lunch cipher_juice-userdebug
+      - lunch aosp_juice-userdebug
       - make bacon -j8
 
   Upload_script:
