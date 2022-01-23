@@ -23,8 +23,8 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 60G
       - source build/envsetup.sh
-      - lunch evolution_juice-userdebug
-      - mka evolution
+      - lunch lineage_juice-userdebug
+      - mka lineage
 
   Upload_script:
       - echo "============================"
