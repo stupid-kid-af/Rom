@@ -10,9 +10,9 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
-      - git clone https://github.com/Jaxer159/manifests --depth 1 -b pe+_11_temporary_juice .repo/local_manifests
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune -f --force-sync -j8
+      - repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-mips,-darwin,-notdefault
+      - git clone https://github.com/imannig/local_manifest.git --depth 1 -b evox .repo/local_manifests
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
   Build_script: 
       - export ALLOW_MISSING_DEPENDENCIES=true
@@ -23,8 +23,8 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 60G
       - source build/envsetup.sh
-      - lunch aosp_juice-userdebug
-      - mka bacon -j8
+      - lunch evolution_juice-userdebug
+      - mka evolution
 
   Upload_script:
       - echo "============================"
