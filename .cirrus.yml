@@ -1,5 +1,5 @@
 task:
-  name: "Casi"
+  name: "asi"
   timeout_in: 100000m  
   container:
       image: marvelmathesh/docker:rom
