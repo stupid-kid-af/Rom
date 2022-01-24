@@ -1,5 +1,5 @@
 task:
-  name: "Capher"
+  name: "Ci"
   timeout_in: 100000m  
   container:
       image: marvelmathesh/docker:rom
@@ -10,8 +10,8 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
-    
+      - repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+      - git clone https://github.com/stupid-kid-af/local_manifest.git --depth 1 -b main .repo/local_manifests
       - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 
@@ -24,8 +24,8 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 60G
       - source build/envsetup.sh
-      - lunch aosp_juice-userdebug
-      - make bacon -j8
+      - lunch octavi_juice-userdebug
+      - mka bacon
 
   Upload_script:
       - echo "============================"
