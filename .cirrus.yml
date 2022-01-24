@@ -10,7 +10,7 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -b elle-aosp -g default,-mips,-darwin,-notdefault
+      - repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
     
       - repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
