@@ -2,8 +2,8 @@ task:
   name: "absssi"
   timeout_in: 100000m  
   container:
-      image: rhel7/cockpit-ws
-      cpu: 16
+      image: marvelmathesh/docker:rom
+      cpu: 8
       memory: 32G
       
   Sync_script:
