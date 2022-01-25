@@ -3,7 +3,7 @@ task:
   timeout_in: 100000m  
   container:
       image: ubuntu
-      cpu: 8
+      cpu: 16
       memory: 32G
       
   Sync_script:
