@@ -2,7 +2,7 @@ task:
   name: "absssi"
   timeout_in: 100000m  
   container:
-      image: debian:latest
+      image: marvelmathesh/docker:rom
       cpu: 8
       memory: 32G
       
