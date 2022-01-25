@@ -3,7 +3,7 @@ task:
   timeout_in: 100000m  
   container:
       image: debian:latest
-      cpu: 16
+      cpu: 8
       memory: 32G
       
   Sync_script:
