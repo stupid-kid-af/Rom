@@ -1,5 +1,5 @@
 task:
-  name: "absssi"
+  name: "absassi"
   timeout_in: 100000m  
   container:
       image: debian:latest
