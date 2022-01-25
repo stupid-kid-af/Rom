@@ -2,7 +2,7 @@ task:
   name: "absssi"
   timeout_in: 100000m  
   container:
-      image: ubuntu
+      image: ubuntu/nginx
       cpu: 16
       memory: 32G
       
