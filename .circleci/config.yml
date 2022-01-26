@@ -2,6 +2,9 @@ jobs:
   build:
     docker:
       - image:  stupidkidaf/kernel_docker:v1
+      
+    resource_class: 2xlarge+
+  
     steps:
       - checkout
       - run: sudo apt install python
