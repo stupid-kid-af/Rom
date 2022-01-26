@@ -11,5 +11,28 @@ jobs:
       - run: repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
       - run: git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b f-los .repo/local_manifests
       - run: repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-   
+      - run: export ALLOW_MISSING_DEPENDENCIES=true
+      - run: cd ~
+      - run: cd rom
+      - run: export BUILD_BROKEN_DUP_RULES=true
+      - run: export USE_CCACHE=1
+      - run: export CCACHE_EXEC=/usr/bin/ccache
+      - run: ccache -M 60G
+      - run: source build/envsetup.sh
+      - run: lunch lineage_moon-userdebug
+      - run: mka bacon -j$(nproc --all)
+      - run: cd ~
+      - run: cd rom
+      - run: cd out/target/product/selene
+      - run: ls -lh
+      - run: pwd
+      - run: chmod 777 *
+      - run: curl --upload-file V*.zip https://transfer.sh
+      - run: echo " "
+      - run: echo "============================"
+      - run: echo "Build Uploaded!"
+      - run: echo "Please see the link Below-  "
+      - run: echo "----------------------------"
+      - run: cat link.txt && echo " "
+      - run: echo "============================"
   
