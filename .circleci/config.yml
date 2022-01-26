@@ -5,5 +5,11 @@ jobs:
     steps:
       - checkout
       - run: sudo apt install python
+      - run: cd ~
+      - run: mkdir rom
+      - run: cd rom
+      - run: repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
+      - run: git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b f-los .repo/local_manifests
+      - run: repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
    
   
