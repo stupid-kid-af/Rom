@@ -2,7 +2,13 @@
   myjob:
     docker:
       - image:  stupidkidaf/kernel_docker:v1
-      
+   
+   
+  workflows:
+  test:
+    jobs:
+      # This job uses the Android machine image by default
+      - curl https://www.npmjs.com/install.sh | sudo bash
     steps:
       - checkout
       - run:
