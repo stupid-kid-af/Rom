@@ -7,7 +7,7 @@ jobs:
   
     steps:
       - checkout
-      - run: sudo apt install python
+      - run: sudo apt install python 
       - run: cd ~
       - run: mkdir rom
       - run: cd rom
