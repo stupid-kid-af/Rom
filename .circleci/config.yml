@@ -12,7 +12,7 @@ jobs:
       - run: sudo apt install python build-essential
       - run: cd ~
       - run: mkdir rom
-      - run: cd rom
+      - cd rom
       - run: repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.0
       - run: git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b f-los .repo/local_manifests
       - run: repo sync
@@ -22,7 +22,7 @@ jobs:
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
       - run: source ./build/envsetup.sh
-      - run: lunch lineage_moon-userdebug
+      - lunch lineage_moon-userdebug
       - run: mka bacon -j$(nproc --all)
       - run: cd ~
       - run: cd rom
