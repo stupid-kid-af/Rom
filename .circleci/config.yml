@@ -16,7 +16,7 @@ jobs:
       - run: git clone https://github.com/Dullest-Pants/local_manifest.git --depth 1 -b main .repo/local_manifests
       - run: repo sync
       - run: source build/envsetup.sh
-      - run: lunch aosp_juice-user
+
       
 
 
@@ -35,7 +35,7 @@ jobs:
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
       - run: source ./build/envsetup.sh
-      - run: lunch lineage_moon-userdebug
+      - run: lunch aosp_juice-userdebug
       - run: mka bacon -j$(nproc --all)
       - run: cd ~
       - run: cd rom
@@ -52,3 +52,10 @@ jobs:
       - run: cat link.txt && echo " "
       - run: echo "============================"
   
+    workflows:
+      version: 2
+      
+      my_workflow:
+        jobs:
+          - build
+          - buildo
