@@ -1,7 +1,16 @@
-version: 2
+version: 2.1
+  workflows:
+
+      
+      my_workflow:
+        jobs:
+          - build
+          - buildo
+
+
 jobs:
   build:
-    working_directory: ~/circleci-demo
+  
     docker:
       - image:  stupidkidaf/kernel_docker:v1
       
@@ -12,10 +21,14 @@ jobs:
       - run: sudo apt-get -y update
       - run: sudo apt -y install python build-essential python3 lunch
       - run: cd ~
+      - run: mkdir rom
+      - run: cd rom
       - run: repo init --depth=1 --no-repo-verify -u  https://github.com/PixelExperience/manifest -b twelve
       - run: git clone https://github.com/Dullest-Pants/local_manifest.git --depth 1 -b main .repo/local_manifests
       - run: repo sync
       - run: source build/envsetup.sh
+      - run: ls
+      - run: . build/envsetup.sh
 
       
 
@@ -52,10 +65,4 @@ jobs:
       - run: cat link.txt && echo " "
       - run: echo "============================"
   
-    workflows:
-      version: 2
-      
-      my_workflow:
-        jobs:
-          - build
-          - buildo
+  
