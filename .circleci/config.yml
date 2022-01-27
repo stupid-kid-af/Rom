@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get -y update
-      - run: sudo apt install python build-essential python3 python2 lunch
+      - run: sudo apt install python build-essential python3 lunch
       - run: cd ~
       - run: repo init --depth=1 --no-repo-verify -u  https://github.com/PixelExperience/manifest -b twelve
       - run: git clone https://github.com/Dullest-Pants/local_manifest.git --depth 1 -b main .repo/local_manifests
