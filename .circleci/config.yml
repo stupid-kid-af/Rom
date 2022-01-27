@@ -12,9 +12,9 @@ jobs:
       - run: cd ~
       - run: mkdir rom
       - run: cd rom
-      - run: repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
+      - run: repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
       - run: git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b f-los .repo/local_manifests
-      - run: repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.0
+      - run: repo sync
       - run: export ALLOW_MISSING_DEPENDENCIES=true
       - run: cd ~
       - run: cd rom
