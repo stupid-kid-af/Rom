@@ -22,18 +22,7 @@ jobs:
       - run: source build/envsetup.sh
       - run: ls
       - run: . build/envsetup.sh
-
-      
-
-
-  buildo:
-    docker:
-     - image:  stupidkidaf/kernel_docker:v1
-      
-    resource_class: large
-  
-    steps:
-      - checkout
+      - run: ls
       - run: cd ~
       - run: cd rom
       - run: export BUILD_BROKEN_DUP_RULES=true
@@ -58,9 +47,3 @@ jobs:
       - run: cat link.txt && echo " "
       - run: echo "============================"
   
-    workflows:
-      my_workflow:
-        jobs:
-          - build
-          - buildo
-
