@@ -34,7 +34,7 @@ build:
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
       - run: source ./build/envsetup.sh
-      - lunch lineage_moon-userdebug
+      - run: lunch lineage_moon-userdebug
       - run: mka bacon -j$(nproc --all)
       - run: cd ~
       - run: cd rom
