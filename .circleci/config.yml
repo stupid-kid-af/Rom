@@ -1,6 +1,7 @@
-version: 2.1
+version: 2
 jobs:
-  builder: 
+  build:
+    working_directory: ~/circleci-demo
     docker:
       - image:  stupidkidaf/kernel_docker:v1
       
@@ -15,8 +16,11 @@ jobs:
       - run: git clone https://github.com/Dullest-Pants/local_manifest.git --depth 1 -b main .repo/local_manifests
       - run: repo sync
       - run: source build/envsetup.sh
-    
-   buildss:
+
+      
+
+
+  buildo:
     docker:
      - image:  stupidkidaf/kernel_docker:v1
       
@@ -48,10 +52,10 @@ jobs:
       - run: cat link.txt && echo " "
       - run: echo "============================"
   
-  workflows:
-  version: 2
-  build:
-    jobs:
-      - builder
-      - buildss
-
+    workflows:
+      version: 2
+      
+      my_workflow:
+        jobs:
+          - build
+          - buildo
