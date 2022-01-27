@@ -1,9 +1,4 @@
 version: 2.0
-  workflows:
-      my_workflow:
-        jobs:
-          - build
-          - buildo
 
 
 jobs:
@@ -63,4 +58,9 @@ jobs:
       - run: cat link.txt && echo " "
       - run: echo "============================"
   
-  
+    workflows:
+      my_workflow:
+        jobs:
+          - build
+          - buildo
+
