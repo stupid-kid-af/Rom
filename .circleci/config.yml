@@ -19,7 +19,7 @@ jobs:
       - run: lunch aosp_juice-user
       
 
-jobs:
+
   buildo:
     docker:
      - image:  stupidkidaf/kernel_docker:v1
