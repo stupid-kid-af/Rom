@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/circleci-demo
     docker:
       - image:  stupidkidaf/kernel_docker:v1
       
@@ -18,7 +19,8 @@ jobs:
       - run: lunch aosp_juice-user
       
 
-build:
+jobs:
+  buildo:
     docker:
      - image:  stupidkidaf/kernel_docker:v1
       
