@@ -6,7 +6,7 @@ jobs:
   
     docker:
       - image: stupidkidaf/kernel_docker:v1
-      
+       
     resource_class: large
   
     steps:
