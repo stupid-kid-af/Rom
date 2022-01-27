@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  "build":
+  'build':
     docker:
       - image:  stupidkidaf/kernel_docker:v1
       
@@ -16,7 +16,7 @@ jobs:
       - run: repo sync
       - run: source build/envsetup.sh
     
-   "buildo":
+   'buildo':
     docker:
      - image:  stupidkidaf/kernel_docker:v1
       
