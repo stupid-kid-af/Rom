@@ -22,7 +22,7 @@ jobs:
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
-      - run: source build/envsetup.sh
+      - run: . build/envsetup.sh
       - run: lunch lineage_moon-userdebug
       - run: mka bacon -j$(nproc --all)
       - run: cd ~
