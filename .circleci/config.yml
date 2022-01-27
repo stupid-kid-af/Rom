@@ -30,7 +30,7 @@ jobs:
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
       - run: source ./build/envsetup.sh
-      - run: lunch aosp_juice-userdebug
+      - run: lunch 
       - run: mka bacon -j$(nproc --all)
       - run: cd ~
       - run: cd rom
