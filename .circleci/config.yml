@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get -y update
-      - run: sudo apt -y install python build-essential python3 lunch
+      - run: sudo apt -y install python build-essential python3 
       - run: cd ~
       - run: mkdir rom
       - run: cd rom
