@@ -30,8 +30,8 @@ jobs:
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
       - run: source ./build/envsetup.sh
-      - run: lunch 
-      - run: mka bacon -j$(nproc --all)
+      - run: lunch aosp_juice-userdebug
+      - run: mka bacon
       - run: cd ~
       - run: cd rom
       - run: cd out/target/product/selene
