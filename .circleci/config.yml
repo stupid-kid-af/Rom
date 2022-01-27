@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  builder: 
     docker:
       - image:  stupidkidaf/kernel_docker:v1
       
@@ -16,7 +16,7 @@ jobs:
       - run: repo sync
       - run: source build/envsetup.sh
     
-   buildo:
+   buildss:
     docker:
      - image:  stupidkidaf/kernel_docker:v1
       
@@ -52,6 +52,6 @@ jobs:
   version: 2
   build:
     jobs:
-      - build
-      - buildo
+      - builder
+      - buildss
 
