@@ -17,11 +17,6 @@ jobs:
       - run: git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b f-los .repo/local_manifests
       - run: repo sync
       - run: export ALLOW_MISSING_DEPENDENCIES=true
-      
-   test:
-      docker:
-      - image:  stupidkidaf/kernel_docker:v1
-      steps:
       - run: cd ~
       - run: cd rom
       - run: export BUILD_BROKEN_DUP_RULES=true
@@ -45,4 +40,17 @@ jobs:
       - run: echo "----------------------------"
       - run: cat link.txt && echo " "
       - run: echo "============================"
+
+build:
+    docker:
+      - image:  stupidkidaf/kernel_docker:v1
+      
+    resource_class: large
+  
+    steps:
+      - checkout
+      - run: sudo apt-get -y update
+      - run: sudo apt install python build-essential
+      - run: cd ~
+      - run: mkdir rom
   
