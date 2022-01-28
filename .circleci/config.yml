@@ -24,8 +24,6 @@ jobs:
       - run: |
           . build/envsetup.sh && lunch aosp_juice-userdebug
       - run: ls
-      - run: cd ~
-      - run: cd rom
       - run: export BUILD_BROKEN_DUP_RULES=true
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
