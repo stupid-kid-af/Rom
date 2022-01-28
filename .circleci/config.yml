@@ -22,7 +22,7 @@ jobs:
       - run: repo sync
       - run: ls
       - run: |
-          . build/envsetup.sh && breakfast juice
+          . build/envsetup.sh && lunch aosp_juice-userdebug
       - run: ls
       - run: cd ~
       - run: cd rom
