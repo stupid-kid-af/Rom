@@ -19,7 +19,7 @@ jobs:
       - run: repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
       - run: git clone https://github.com/stupid-kid-af/manifest --depth 1 -b main .repo/local_manifests
       - run: repo sync
-      - run: ls
+      - run: ls 
       - run: |
           . build/envsetup.sh && lunch aosp_juice-userdebug
       - run: ls
