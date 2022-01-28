@@ -22,7 +22,7 @@ jobs:
       - run: repo sync
       - run: ls
       - run: |
-          . build/envsetup.sh && lunch aosp_juice-userdebug
+          . build/envsetup.sh && breakfast juice
       - run: ls
       - run: cd ~
       - run: cd rom
@@ -30,7 +30,7 @@ jobs:
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
-      - run: . build/envsetup.sh && mka bacon
+      - run: source build/envsetup.sh && mka bacon
       - run: cd ~
       - run: cd rom
       - run: cd out/target/product/selene
