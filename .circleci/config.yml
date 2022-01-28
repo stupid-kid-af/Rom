@@ -21,8 +21,7 @@ jobs:
       - run: repo sync
       - run: ls
       - run: |
-          . build/envsetup.sh
-          lunch arrow_moon-userdebug
+          . build/envsetup.sh && lunch arrow_moon-userdebug
       - run: ls
       - run: cd ~
       - run: cd rom
