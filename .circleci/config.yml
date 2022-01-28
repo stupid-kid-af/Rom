@@ -29,10 +29,7 @@ jobs:
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
       - run: ccache -M 60G
-      - run: source build/envsetup.sh
-      - run: lunch arrow_moon-userdebug
-      - run: export TZ=Asia/Kolkata
-      - run: m bacon
+      - run: . build/envsetup.sh && m bacon
       - run: cd ~
       - run: cd rom
       - run: cd out/target/product/selene
