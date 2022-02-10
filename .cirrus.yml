@@ -3,8 +3,8 @@ task:
   timeout_in: 240m  
   container:
       image: stupidkidaf/kernel_docker:v1
-      cpu: 4
-      memory: 8G
+      cpu: 8
+      memory: 32G
       
   Sync_script:
       - cd ~
