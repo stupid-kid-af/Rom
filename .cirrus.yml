@@ -12,7 +12,7 @@ task:
       - cd rom
       - repo init -u https://android.googlesource.com/platform/manifest -b android-11.0.0_r32
       - git clone https://github.com/phhusson/treble_manifest -b android-11.0 .repo/local_manifests
-      - repo sync -c --no-tags --optimized-fetch --prune --force-sync -j8
+      - repo sync -j8
       - cd device/phh/treble
       - bash generate.sh
       - . build/envsetup.sh
