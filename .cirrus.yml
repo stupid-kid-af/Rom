@@ -1,0 +1,50 @@
+task:
+  name: "Radiant"
+  timeout_in: 240m  
+  container:
+      image: ghcr.io/iamshubh69/docker:main
+      cpu: 8
+      memory: 32G
+      
+  Sync_script:
+      - cd ~
+      - mkdir rom
+      - cd rom
+      - repo init -u https://android.googlesource.com/platform/manifest -b android-11.0.0_r32
+      - git clone https://github.com/phhusson/treble_manifest -b android-11.0 .repo/local_manifests
+      - repo sync -c --no-tags --optimized-fetch --prune --force-sync -j8
+      - cd device/phh/treble
+      - bash generate.sh
+      - . build/envsetup.sh
+      - lunch treble_arm64_bgS-userdebug
+      - make -j8 systemimage
+
+  Build_script: 
+      - export ALLOW_MISSING_DEPENDENCIES=true
+      - cd ~
+      - cd rom
+      - export BUILD_BROKEN_DUP_RULES=true
+      - export USE_CCACHE=1 >> ~/.bashrc
+      - ccache -M 40G
+      - . build/envsetup.sh
+      - lunch aosp_RMX2020-userdebug
+      - m aex
+
+  Upload_script:
+      - echo "============================"
+      - echo "Uploading the Build..."
+      - echo "============================"
+      - cd ~
+      - cd rom
+      - cd out/target/product/selene
+      - ls -lh
+      - pwd
+      - chmod 777 *
+      - curl --upload-file V*.zip https://transfer.sh
+      - echo " "
+      - echo "============================"
+      - echo "Build Uploaded!"
+      - echo "Please see the link Below-  "
+      - echo "----------------------------"
+      - cat link.txt && echo " "
+      - echo "============================"
