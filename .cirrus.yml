@@ -2,7 +2,7 @@ task:
   name: "Radiant"
   timeout_in: 240m  
   container:
-      image: ghcr.io/iamshubh69/docker:main
+      image: stupidkidaf/kernel_docker:v1
       cpu: 8
       memory: 32G
       
