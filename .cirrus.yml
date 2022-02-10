@@ -15,6 +15,9 @@ task:
       - repo sync -j8
       - cd device/phh/treble
       - bash generate.sh
+      - cd ..
+      - cd ..
+      - cd ..
       - . build/envsetup.sh
       - lunch treble_arm64_bgS-userdebug
       - make -j8 systemimage
