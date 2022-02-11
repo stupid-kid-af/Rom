@@ -10,7 +10,7 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init -u https://github.com/PixelOS-Pixelish/manifest -b twelve
+      - repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r30
       - git clone https://github.com/phhusson/treble_manifest -b android-12.0 .repo/local_manifests
       - repo sync -j8
       - cd device/phh/treble
