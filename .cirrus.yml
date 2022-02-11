@@ -10,7 +10,7 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone
+      - repo init -u https://github.com/PixelOS-Pixelish/manifest -b twelve
       - git clone https://github.com/phhusson/treble_manifest -b android-11.0 .repo/local_manifests
       - repo sync -j8
       - cd device/phh/treble
