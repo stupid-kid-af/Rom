@@ -10,17 +10,12 @@ task:
       - cd ~
       - mkdir rom
       - cd rom
-      - repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r30
-      - git clone https://github.com/phhusson/treble_manifest -b android-12.0 .repo/local_manifests
+      - repo init --depth=1 -u https://github.com/ArrowOS/android_manifest.git -b arrow-8.x
+      - git clone https://github.com/stupid-kid-af/manifest --depth 1 -b main
       - repo sync -j8
-      - cd device/phh/treble
-      - bash generate.sh
-      - cd ..
-      - cd ..
-      - cd ..
       - . build/envsetup.sh
-      - lunch treble_arm64_bgS-userdebug
-      - make -j8 systemimage
+      - lunch arrow_juice-userdebug
+      - make -j8 
 
   Build_script: 
       - export ALLOW_MISSING_DEPENDENCIES=true
