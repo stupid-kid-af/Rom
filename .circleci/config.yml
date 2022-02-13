@@ -15,14 +15,14 @@ jobs:
       - run: sudo apt-get -y update
       - run: sudo apt -y install python build-essential python3 
       - run: cd ~
-      - run: ENV mkdir rom
+      - run: export PATH=$PATH:/bin:/usr/local/bin &&  mkdir rom
       - run: cd rom
       - run: repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
       - run: git clone https://github.com/iamshubh69/local_manifest --depth 1 -b main .repo/local_manifests
       - run: repo sync --force-sync -j8
       - run: ls
       - run: |
-          ENV . build/envsetup.sh && lunch aosp_moon-userdebug
+          ENV . build/envsetup.sh && lunch aosp_moon-userdebug && make xd
       - run: ls
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
