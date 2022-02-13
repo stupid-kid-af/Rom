@@ -22,7 +22,7 @@ jobs:
       - run: repo sync --force-sync -j8
       - run: ls
       - run: |
-          . build/envsetup.sh && lunch aosp_moon-userdebug
+          ENV . build/envsetup.sh && lunch aosp_moon-userdebug
       - run: ls
       - run: export USE_CCACHE=1
       - run: export CCACHE_EXEC=/usr/bin/ccache
